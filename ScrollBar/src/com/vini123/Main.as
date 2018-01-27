@@ -2,6 +2,7 @@ package com.vini123
 {
 	import com.vini123.component.bitmap.ScaleBitmap;
 	import com.vini123.component.scrollBar.VScrollBar;
+	import com.vini123.component.system.FPSMonitor;
 	import com.vini123.implement.IScrollBar;
 	
 	import flash.display.BitmapData;
@@ -20,6 +21,8 @@ package com.vini123
 		private var vscrollBar:IScrollBar;
 		
 		private var gril:Girl;
+		
+		private var fps:FPSMonitor;
 		
 		public function Main()
 		{
@@ -49,6 +52,10 @@ package com.vini123
 			this.width = 550;
 			this.height = 396;
 			refreshScrollBar();
+			
+			fps = new FPSMonitor(240, 80);
+			fps.visible = true;
+			addChild(fps);
 		}
 		
 		protected function get itemsContainerHeight():Number
